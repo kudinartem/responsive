@@ -1,4 +1,6 @@
-* {
+*,
+:before,
+:after {
     box-sizing: border-box;
 }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -48,4 +50,110 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+:root {
+    --main_color: #000000
+}
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    background: #E5E5E5;
+}
+.main-logo {
+    margin: 80px 0;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+.nav-cont a {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--main_color);
+    text-decoration: none;
+    padding: 0 40px;
+}
+.main-text {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.text {
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--main_color);
+    margin-bottom: 80px;
+}
+.header {
+    font-size: 40px;
+    line-height: 49px;
+    text-transform: uppercase;
+    color: var(--main_color);
+    border: 1px solid;
+    border-color: var(--main_color) transparent;
+    padding: 16px 0;
+    margin-bottom: 60px;
+}
+.container {
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    background-color: transparent;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box {
+    background: var(--main_color);
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 69px 50px 50px 50px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 500px;
+    margin: 0 0 24px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.box span {
+    font-size: 48px;
+}
+.comment-field {
+    min-width: 100px;
+    background: #e6e6e6;
+    border: transparent;
+    padding: 5px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    resize: none;
+}
+.comment-area {
+    border: 1px solid var(--main_color);
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 30px;
+}
+.label-block {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--main_color);
+    display: block;
+    padding: 0 0 11px;
+}
+.btn {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+    width: 200px;
+    height: 60px;
+    background: var(--main_color);
+    border: none;
+    text-transform: uppercase;
 }
