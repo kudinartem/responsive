@@ -52,14 +52,17 @@ table {
     border-spacing: 0;
 }
 :root {
-    --main_color: #000000
+    --main_color: #000000;
+    --accent-color: #FFFFFF;
+    --bg-color: #E5E5E5;
+    --content-line-height: 1.2;
 }
 body {
     margin: 0;
     text-align: center;
     font-family: 'Montserrat';
     font-weight: 400;
-    background: #E5E5E5;
+    background: var(--bg-color);
 }
 .logo img {
     height: 60px;
@@ -75,7 +78,7 @@ body {
 }
 .nav-cont a {
     font-size: 20px;
-    line-height: 24.38px;
+    line-height: var(--content-line-height);
     color: var(--main_color);
     text-decoration: none;
     padding: 0 40px;
@@ -89,7 +92,7 @@ body {
 }
 .text {
     font-size: 28px;
-    line-height: 34.13px;
+    line-height: var(--content-line-height);
     color: var(--main_color);
 }
 .header-box {
@@ -103,7 +106,7 @@ body {
 }
 .header {
     font-size: 40px;
-    line-height: 48.76px;
+    line-height: var(--content-line-height);
     text-transform: uppercase;
 }
 .history {
@@ -122,8 +125,8 @@ body {
     text-align: left;
     background: var(--main_color);
     font-size: 18px;
-    line-height: 21.94px;
-    color: #FFFFFF;
+    line-height: var(--content-line-height);
+    color: var(--accent-color);
     padding: 50px;
     flex: 0 1 500px;
     margin: 0 0 24px;
@@ -142,12 +145,12 @@ body {
 }
 .comment-field {
     font-size: 18px;
-    line-height: 22px;
+    line-height: var(--content-line-height);
     color: var(--main_color);
     opacity: 0.5;
     min-width: 400px;
     height: 60px;
-    background: #E5E5E5;
+    background: var(--bg-color);
     border: transparent;
     padding: 18px 2px;
     resize: none;
@@ -157,8 +160,8 @@ body {
 }
 .btn {
     font-size: 28px;
-    line-height: 34.13px;
-    color: #FFFFFF;
+    line-height: var(--content-line-height);
+    color: var(--accent-color);
     width: 200px;
     height: 60px;
     background: var(--main_color);
@@ -175,7 +178,7 @@ and (min-width: 1024px)
 and (max-width: 1439px) {
 
 body {
-    padding: 48px;
+    padding: 48px 48px 0;
 }
 .logo img {
     height: 48px;
@@ -193,11 +196,9 @@ body {
 }
 .text {
     font-size: 20px;
-    line-height: 24.38px;
 }
 .header {
     font-size: 28px;
-    line-height: 34.13px;
 }
 .header-box {
     /*width: 100%;*/
@@ -205,5 +206,11 @@ body {
 }
 .container {
     display: block;
+}
+.box {
+    padding: 48px;
+}
+.comment-area {
+    margin-bottom: 80px;
 }
 }
