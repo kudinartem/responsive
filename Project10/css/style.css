@@ -61,71 +61,77 @@ body {
     font-weight: 400;
     background: #E5E5E5;
 }
+.logo img {
+    height: 60px;
+    width: 100px;
+}
 .main-logo {
     margin: 80px 0;
 }
-.nav {
+.nav-list {
     display: flex;
     justify-content: center;
     margin-bottom: 80px;
 }
 .nav-cont a {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 24.38px;
     color: var(--main_color);
     text-decoration: none;
     padding: 0 40px;
 }
-//.slider {
+.slider {
     width: 100%;
 }
-
 .main-text {
     max-width: 1024px;
     margin: 140px auto 60px;
 }
 .text {
     font-size: 28px;
-    line-height: 34px;
+    line-height: 34.13px;
     color: var(--main_color);
     margin-bottom: 80px;
 }
-.header {
-    font-size: 40px;
-    line-height: 49px;
-    text-transform: uppercase;
+.header-box {
+    display: block;
+    margin: 0 auto 47px;
+    min-height: 80px;
+    max-width: 1024px;
     color: var(--main_color);
     border: 1px solid;
     border-color: var(--main_color) transparent;
-    padding: 16px 0;
+    padding: 16px;
+}
+.header {
+    font-size: 40px;
+    line-height: 48.76px;
+    text-transform: uppercase;
+}
+.history {
+    margin-bottom: 60px;
 }
 .container {
     display: flex;
     max-width: 1024px;
     margin: 0 auto 36px;
-    background-color: transparent;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .box {
-    background: var(--main_color);
-    font-size: 18px;
-    line-height: 22px;
-    color: #FFFFFF;
-    padding: 69px 50px 50px 50px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 500px;
-    margin: 0 0 24px;
     display: flex;
     align-items: center;
     text-align: left;
+    background: var(--main_color);
+    font-size: 18px;
+    line-height: 21.94px;
+    color: #FFFFFF;
+    padding: 50px;
+    flex: 0 1 500px;
+    margin: 0 0 24px;
 }
 .box span {
     font-size: 48px;
-}
-.last {
-    margin: 0 auto 47px;
 }
 .comment-area {
     border: 1px solid var(--main_color);
@@ -153,13 +159,46 @@ body {
 }
 .btn {
     font-size: 28px;
-    line-height: 34px;
+    line-height: 34.13px;
     color: #FFFFFF;
     width: 200px;
     height: 60px;
     background: var(--main_color);
     border: none;
     border-radius: 8px;
-    text-transform: uppercase;
     cursor: pointer;
+}
+/* tablet */
+
+@media only screen
+
+and (min-width: 1024px)
+
+and (max-width: 1439px) {
+
+body {
+    padding: 48px;
+}
+.logo img {
+    height: 48px;
+    width: 80px;
+}
+.main-logo {
+    margin: 0 0 96px;
+}
+.nav-list {
+    display: none;
+}
+.main-text {
+    max-width: 824px;
+    margin: 108px auto 48px;
+}
+.text {
+    font-size: 20px;
+    line-height: 24.38px;
+}
+.header {
+    font-size: 28px;
+    line-height: 34.13px;
+}
 }
