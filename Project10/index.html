@@ -40,15 +40,15 @@
             .slider-item img { 
                 max-width: 100%;
             }
-            //@media only screen
-            and (min-width: 376px)
-            and (max-width: 1024px) {
+            @media only screen
+            and (min-width: 1024px)
+            and (max-width: 1439px) {
                 .slick-slide { 
-                    //margin: 0 10px;
+                    margin: 0 10px;
                     padding: 0 50px;
                 }
-                .slider {
-                max-width: 860px;
+                //.slider {
+                    max-width: 860px;
                 }
             }
         </style>
@@ -103,7 +103,7 @@
                 autoplaySpeed: 2000,
                 responsive: [
                     {
-                        breakpoint: 1024,
+                        breakpoint: 1439,
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
