@@ -53,8 +53,7 @@ table {
 }
 :root {
     --main_color: #000000;
-    --accent-color: #FFFFFF;
-    --bg-color: #E5E5E5;
+    --accent_bg-color: #FFFFFF;
     --content-line-height: 1.2;
 }
 body {
@@ -62,26 +61,49 @@ body {
     text-align: center;
     font-family: 'Montserrat';
     font-weight: 400;
-    background: var(--bg-color);
+    background: var(--accent_bg-color);
+    padding: 80px 0 0;
+}
+.header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.header-body {
+    position: relative;
+    z-index: 2; 
+}
+.header-burger {
+    display: none;
 }
 .logo img {
     height: 60px;
     width: 100px;
-}
-.main-logo {
-    margin: 80px 0;
+    margin-bottom: 80px;
 }
 .nav-list {
     display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
+    justify-content: center;    
 }
-.nav-cont a {
+.nav-link a {
     font-size: 20px;
     line-height: var(--content-line-height);
     color: var(--main_color);
     text-decoration: none;
     padding: 0 40px;
+}
+.nav-menu {
+    margin-bottom: 80px;
 }
 .slider {
     width: 100%;
@@ -95,7 +117,7 @@ body {
     line-height: var(--content-line-height);
     color: var(--main_color);
 }
-.header-box {
+.tittle-box {
     display: block;
     margin: 0 auto 47px;
     max-width: 1024px;
@@ -104,7 +126,7 @@ body {
     border-color: var(--main_color) transparent;
     padding: 16px;
 }
-.header {
+.tittle {
     font-size: 40px;
     line-height: var(--content-line-height);
     text-transform: uppercase;
@@ -126,7 +148,7 @@ body {
     background: var(--main_color);
     font-size: 18px;
     line-height: var(--content-line-height);
-    color: var(--accent-color);
+    color: var(--accent_bg-color);
     padding: 50px;
     flex: 0 1 500px;
     margin: 0 0 24px;
@@ -150,7 +172,7 @@ body {
     opacity: 0.5;
     min-width: 400px;
     height: 60px;
-    background: var(--bg-color);
+    background: var(--accent_bg-color);
     border: transparent;
     padding: 18px 2px;
     resize: none;
@@ -161,7 +183,7 @@ body {
 .btn {
     font-size: 28px;
     line-height: var(--content-line-height);
-    color: var(--accent-color);
+    color: var(--accent_bg-color);
     width: 200px;
     height: 60px;
     background: var(--main_color);
@@ -180,15 +202,58 @@ and (max-width: 1439px) {
 body {
     padding: 48px 48px 0;
 }
+.header-burger {
+    display: block;
+    position: absolute;
+    width: 48px;
+    height: 31px;
+    top: 0;
+}
+.header-burger::before,
+.header-burger::after {
+    content: "";
+    background-color: var(--main_color);
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+}
+.header-burger::before {
+    top: 0;
+}
+.header-burger::after {
+    bottom: 0;
+}
+.header-burger span {
+    background-color: var(--main_color);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    top: 13px;
+}
+.header {
+    margin-bottom: 131px;
+}
 .logo img {
+    position: absolute;
+    display: block;
+    top: -10px;
+    margin: 0;
+    height: 48px;
+    left: 50%;
+    margin-left: -48px; 
     height: 48px;
     width: 80px;
 }
-.main-logo {
-    margin: 0 0 96px;
+.nav-menu {
+    display: none;
 }
 .nav-list {
-    display: none;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
 }
 .main-text {
     max-width: 824px;
@@ -197,10 +262,10 @@ body {
 .text {
     font-size: 20px;
 }
-.header {
+.tittle {
     font-size: 28px;
 }
-.header-box {
+.tittle-box {
     /*width: 100%;*/
     margin-bottom: 32px;
 }
