@@ -57,12 +57,13 @@ table {
     --content-line-height: 1.2;
 }
 body {
-    margin: 0;
+    padding: 60px;
+}
+.wrapper {
     text-align: center;
     font-family: 'Montserrat';
     font-weight: 400;
     background: var(--accent_bg-color);
-    padding: 80px 0 0;
 }
 .header {
     position: relative;
@@ -70,6 +71,7 @@ body {
     top: 0;
     left: 0;
     z-index: 999;
+    margin-bottom: 80px;
 }
 .header:before {
     content: "";
@@ -79,39 +81,54 @@ body {
     width: 100%;
     height: 100%;
 }
-.header-body {
-    position: relative;
-    z-index: 2; 
-}
 .header-burger {
     display: none;
+}
+.nav-menu form {
+    display: none;
+}
+.nav-menu svg {
+    display: none;
+}
+.logo {
+    display: block;
+    margin: 20px auto 80px;
 }
 .logo svg {
     height: 100%;
     width: 100px;
-    margin-bottom: 80px;
     cursor: pointer;
 }
 .nav-list {
     display: flex;
     justify-content: center;    
+    gap: 80px;
 }
 .nav-link a {
     font-size: 20px;
     line-height: var(--content-line-height);
     color: var(--main_color);
     text-decoration: none;
-    padding: 0 40px;
 }
-.nav-menu {
-    margin-bottom: 80px;
+ul.slick-dots li button:before {
+    content: "";
+    border-radius: 50%;
+    font-size: 20px;
+    border: 1px solid #000000;
+    background: var(--accent_bg-color);
+    opacity: 1;
 }
-.slider {
-    width: 100%;
+ul.slick-dots li.slick-active button:before {
+    content: "";
+    background: black;
+    opacity: 1;
+}
+.slick-slide img {
+    margin: 0 auto 40px;
 }
 .main-text {
     max-width: 1024px;
-    margin: 140px auto 80px;
+    margin: 100px auto 80px;
 }
 .text {
     font-size: 28px;
@@ -120,7 +137,7 @@ body {
 }
 .tittle-box {
     display: block;
-    margin: 0 auto 47px;
+    margin: 0 auto 60px;
     max-width: 1024px;
     color: var(--main_color);
     border: 1px solid;
@@ -131,9 +148,6 @@ body {
     font-size: 40px;
     line-height: var(--content-line-height);
     text-transform: uppercase;
-}
-.history {
-    margin-bottom: 60px;
 }
 .container {
     display: flex;
@@ -166,23 +180,28 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.nav-menu:nth-child(3) form {
-    display: none;
-}
-.nav-menu svg {
-    display: none;
+.comment-area {
+    border: 1px solid var(--main_color);
+    max-width: 1024px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .comment-field {
     font-size: 18px;
-    line-height: var(--content-line-height);
-    color: var(--main_color);
-    opacity: 0.5;
-    min-width: 400px;
-    height: 60px;
+    flex: 1 1 0;
     background: var(--accent_bg-color);
-    border: transparent;
-    padding: 18px 2px;
+    border: none;
     resize: none;
+}
+::placeholder {
+    opacity: 0.5;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    line-height: var(--content-line-height);
+    border: none;
 }
 .label-block {
     color: var(--main_color);
@@ -222,11 +241,11 @@ and (min-width: 1024px)
 and (max-width: 1439px) {
 
     body {
-        padding: 48px 48px 0;
+        padding: 48px;
     }
     body.lock {
         overflow: hidden;
-    }
+    }    
     .nav-menu {
         position: fixed;
         top: -600px;
@@ -235,30 +254,40 @@ and (max-width: 1439px) {
         height: 600px;
         overflow: auto;
         background: var(--main_color);
-        padding: 190px 0 0 0;
+    /*    padding: 48px auto;*/
         transition: all .3s ease 0s;
-    }
+    }    
     .active .nav-menu a {
         color: #FFFFFF;
     }
-    .logo svg {
+    .logo {
         display: block;
-        margin: -24px auto 68px;
-        width: 80px;
-        height: 100px;
+        margin: 0 auto;
     }
-    .active .nav-menu svg {
-        position: absolute;
-        top: 46px;
-        left: 50%;
-        transform: translateX(-50%);
+    .logo svg {      
+        display: block;  
+        margin: 0 auto;
+        width: 80px;
+        height: 48px;
+    }
+    .active .nav-menu {
+        padding: 48px 0 0;
+        top: 0;
+    }  
+    .active .nav-menu .logo {
+        margin-bottom: 124px;
+    }
+    .header {
+        padding: 3px;
+        margin-bottom: 90px;
     }
     .header-burger {
         display: block;
         position: absolute;
         width: 48px;
         height: 31px;
-        bottom: 38px;
+        top: 8px;
+        left: 0;
         z-index: 3;
     }
     .header-burger span {
@@ -299,16 +328,26 @@ and (max-width: 1439px) {
         transform: rotate(-45deg);
         background-color: #FFFFFF;
         bottom: 13px;
-    }
-    .active .nav-menu {
-        top: 0;
-    }
+    }      
     .active .nav-menu form {
         display: flex;
     }
+    .active .nav.comment-area {
+        border: 1px solid #FFFFFF;
+        margin: 80px 48px 0;
+        max-width: 100%;
+    }
+    .active .nav.comment-field {
+        background: transparent;
+        color: var(--accent_bg-color);
+    }
+    .active .nav.btn {
+        color: var(--main_color);
+        background: var(--accent_bg-color);
+    }
     .main-text {
         max-width: 824px;
-        margin: 108px auto 48px;
+        margin: 70px auto 48px;
     }
     .text {
         font-size: 20px;
@@ -317,26 +356,14 @@ and (max-width: 1439px) {
         font-size: 28px;
     }
     .tittle-box {
-        /*width: 100%;*/
         margin-bottom: 32px;    
     }
     .container {
         display: block;
+        margin: 0 auto;
     }
     .box {
         padding: 48px;
-    }
-    .nav.comment-area {
-        border: 1px solid #FFFFFF;
-        margin: 80px 48px 0;
-        max-width: 100%;
-    }
-    .nav.comment-field {
-        background: transparent;
-    }
-    .nav.btn {
-        color: var(--main_color);
-        background: var(--accent_bg-color);
     }
 }
 
@@ -351,11 +378,26 @@ and (max-width: 1023px) {
     body {
         padding: 0;
     }
+    .header {
+        margin: 0;
+    }
     .slick-slide { 
         margin: 0 auto;
     } 
-    .logo svg {
+    .logo {
         display: none;
+    }
+    .active .logo {      
+        display: block;  
+        margin: 0;    
+    }
+    .active .nav-menu svg {
+        position: absolute;
+        display: block;
+        width: 80px;
+        height: 48px;
+        top: 24px;
+        right: 20px;
     }
     body.lock {
         overflow: hidden;
@@ -364,12 +406,11 @@ and (max-width: 1023px) {
         width: 8px;
         height: 8px;
     }
-    .slider .slick-dots li {
-        margin: 0 -2px;
-    }
-    .slider .slick-dots {
-        bottom: -25px;
-    }
+    .slick-slide img {
+        margin: 0 auto 24px;  
+        width: 100%;  
+        height: auto;    
+    }  
     .nav-menu {
         position: fixed;
         top: -770px;
@@ -377,33 +418,20 @@ and (max-width: 1023px) {
         width: 100%;
         height: 770px;
         overflow: auto;
-        background: var(--main_color);
-        padding: 120px 0 0 0;
+        background: var(--main_color);    
         transition: all .3s ease 0s;
     }
     .nav-list {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-    }
-    .nav-list li {
-        padding-bottom: 48px;
-    }
-    .nav-list li:last-child {
-        padding-bottom: 90px;
+        flex-grow: 1;
+        gap: 48px;
+        margin: 120px auto 90px;    
     }
     .active .nav-menu a {
         color: #FFFFFF;
-    }
-    .nav-link a {
         padding: 0 20px;
-    }
-    .active .nav-menu svg {
-        position: absolute;
-        display: block;
-        width: 80px;
-        bottom: 270px;
-        right: 20px;
     }
     .header-burger {
         display: block;
@@ -499,7 +527,7 @@ and (max-width: 1023px) {
         margin-bottom: 19px;
         padding: 20px;
     }
-        .btn {
+    .btn {
         font-size: 24px;
         min-width: 100%;
     }
