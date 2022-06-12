@@ -59,6 +59,9 @@ table {
 body {
     padding: 60px;
 }
+.nav-menu {
+    cursor: pointer;
+}
 .wrapper {
     text-align: center;
     font-family: 'Montserrat';
@@ -72,6 +75,7 @@ body {
     left: 0;
     z-index: 999;
     margin-bottom: 80px;
+    cursor: pointer;
 }
 .header:before {
     content: "";
@@ -92,12 +96,12 @@ body {
 }
 .logo {
     display: block;
-    margin: 20px auto 80px;
+    margin: 20px auto 80px;   
 }
 .logo svg {
     height: 100%;
     width: 100px;
-    cursor: pointer;
+     cursor: pointer;
 }
 .nav-list {
     display: flex;
@@ -180,21 +184,13 @@ ul.slick-dots li.slick-active button:before {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.comment-area {
-    border: 1px solid var(--main_color);
-    max-width: 1024px;
-    margin: 0 auto 40px;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 .comment-field {
     font-size: 18px;
     flex: 1 1 0;
     background: var(--accent_bg-color);
     border: none;
     resize: none;
+    padding: 18px 2px 0;
 }
 ::placeholder {
     opacity: 0.5;
@@ -384,12 +380,14 @@ and (max-width: 1023px) {
     .slick-slide { 
         margin: 0 auto;
     } 
-    .logo {
-        display: none;
+    .slider .slick-dots li { 
+        margin: 0 -2px; 
     }
-    .active .logo {      
-        display: block;  
-        margin: 0;    
+    .logo {
+        margin: 0;
+    }
+    .logo svg {
+        display: none;
     }
     .active .nav-menu svg {
         position: absolute;
@@ -534,6 +532,7 @@ and (max-width: 1023px) {
     .active .nav-menu .comment-field {
         border: 1px solid var(--accent_bg-color);
         background-color: transparent;
+        color: var(--accent_bg-color);
     }
     .active .nav-menu .btn {
         background-color: var(--accent_bg-color);
