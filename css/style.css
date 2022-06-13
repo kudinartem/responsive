@@ -134,13 +134,13 @@ ul.slick-dots li button:before {
     content: "";
     border-radius: 50%;
     font-size: 20px;
-    border: 1px solid #000000;
+    border: 1px solid var(--main_color);
     background: var(--accent_bg-color);
     opacity: 1;
 }
 ul.slick-dots li.slick-active button:before {
     content: "";
-    background: black;
+    background: var(--main_color);
     opacity: 1;
 }
 .slick-slide img {
@@ -266,11 +266,10 @@ and (max-width: 1439px) {
         height: 600px;
         overflow: auto;
         background: var(--main_color);
-    /*    padding: 48px auto;*/
         transition: all .3s ease 0s;
     }    
     .active .nav-menu a {
-        color: #FFFFFF;
+        color: var(--accent_bg-color);
     }
     .logo {
         display: block;
@@ -329,23 +328,23 @@ and (max-width: 1439px) {
     }
     .active .header-burger span {
         transform: scale(0);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
     }
     .active .header-burger:before {
         transform: rotate(45deg);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
         top: 13px;
     }
     .active .header-burger:after {
         transform: rotate(-45deg);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
         bottom: 13px;
     }      
     .active .nav-menu form {
         display: flex;
     }
     .active .nav.comment-area {
-        border: 1px solid #FFFFFF;
+        border: 1px solid var(--accent_bg-color);
         margin: 80px 48px 0;
         max-width: 100%;
     }
@@ -447,7 +446,7 @@ and (max-width: 1023px) {
         margin: 120px auto 90px;    
     }
     .active .nav-menu a {
-        color: #FFFFFF;
+        color: var(--accent_bg-color);
         padding: 0 20px;
     }
     .header-burger {
@@ -486,16 +485,16 @@ and (max-width: 1023px) {
     }
     .active .header-burger span {
         transform: scale(0);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
     }
     .active .header-burger:before {
         transform: rotate(45deg);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
         top: 13px;
     }
     .active .header-burger:after {
         transform: rotate(-45deg);
-        background-color: #FFFFFF;
+        background-color: var(--accent_bg-color);
         bottom: 13px;
     }
     .active .nav-menu {
