@@ -190,6 +190,7 @@ ul.slick-dots li.slick-active button:before {
 }
 .box span {
     font-size: 48px;
+    line-height: 22px;
 }
 .comment-area {
     border: 1px solid var(--main_color);
@@ -207,6 +208,7 @@ ul.slick-dots li.slick-active button:before {
     border: none;
     resize: none;
     padding: 18px 2px 0;
+    outline: none;
 }
 ::placeholder {
     opacity: 0.5;
@@ -228,6 +230,8 @@ ul.slick-dots li.slick-active button:before {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 400;
 }
 .back-to-top {
     background: var(--main_color);
@@ -351,10 +355,13 @@ and (max-width: 1439px) {
     .active .nav.comment-field {
         background: transparent;
         color: var(--accent_bg-color);
+        outline: none;
     }
     .active .nav.btn {
         color: var(--main_color);
         background: var(--accent_bg-color);
+        font-family: 'Montserrat';
+        font-weight: 400;
     }
     .main-text {
         max-width: 824px;
