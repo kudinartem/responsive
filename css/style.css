@@ -208,7 +208,7 @@ ul.slick-dots li.slick-active button:before {
     resize: none;
     padding: 18px 2px 0;
 }
-:placeholder {
+::placeholder {
     opacity: 0.5;
     font-size: 18px;
     font-family: 'Montserrat';
